@@ -4,7 +4,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const colors = require('colors')
 const userRoutes = require('./routes/userRoute');
-const connectDb = require('./config/connectDB')
+const connectDb = require('./config/connectDb')
 
 
 //config dot env file
