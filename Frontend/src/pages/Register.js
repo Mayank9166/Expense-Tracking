@@ -11,7 +11,7 @@ const Register = () => {
     const submitHandler = async(values)=>{
            try {
             setloading(true)
-               await axios.post('http://localhost:8080/user/register',values)
+               await axios.post('https://expense-tracking-mnla.onrender.com/user/register',values)
                message.success('Registration Successfully')
                navigate('/login')
                setloading(false)

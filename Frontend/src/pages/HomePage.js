@@ -75,7 +75,7 @@ const HomePage = () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         setloading(true);
-        const res = await axios.post("http://localhost:8080/transections/get-transection", {
+        const res = await axios.post("https://expense-tracking-mnla.onrender.com/transections/get-transection", {
           userid: user._id,
           Frequency,
           selectedDate,
@@ -95,7 +95,7 @@ const HomePage = () => {
   const handleDelete = async(record) => {
      try {
       setloading(true)
-      await axios.post("http://localhost:8080/transections/delete-transection",{transactionId:record._id})
+      await axios.post("https://expense-tracking-mnla.onrender.com/transections/delete-transection",{transactionId:record._id})
       setloading(false)
       message.success('Transaction Deleted')
      } catch (error) {
@@ -111,7 +111,7 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setloading(true);
       if (editTable) {
-        await axios.post("http://localhost:8080/transections/edit-transection", {
+        await axios.post("https://expense-tracking-mnla.onrender.com/transections/edit-transection", {
           payload: {
             ...value,
             userId: user._id,
@@ -121,7 +121,7 @@ const HomePage = () => {
         setloading(false);
         message.success("Transaction Updated Successfully");
       } else {
-        await axios.post("http://localhost:8080/transections/add-transection", {
+        await axios.post("https://expense-tracking-mnla.onrender.com/transections/add-transection", {
           ...value,
           userid: user._id,
         });

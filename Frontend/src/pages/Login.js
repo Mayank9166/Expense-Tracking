@@ -12,7 +12,7 @@ const Login = () => {
      const submitHandler = async(values)=>{
       try {
          setloading(true);
-         const {data}=await axios.post('http://localhost:8080/user/login',values)
+         const {data}=await axios.post('https://expense-tracking-mnla.onrender.com/user/login',values)
         message.success('Login Successfully')
         localStorage.setItem('user', JSON.stringify({...data.user,password:''}));
         navigate('/')
